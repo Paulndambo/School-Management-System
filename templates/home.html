@@ -1,0 +1,11 @@
+{% if user.is_authenticated %}
+	{% if user.is_superuser %}
+		{% include "index.html" %}
+	{% elif user.is_staff %}
+		{% include "teacher-profile.html" %}
+	{% else %}
+		{% include "student-profile.html" %}
+	{% endif %}
+{% else %}
+	{% include "not-logged-in.html" %}
+{% endif %}

@@ -1,0 +1,64 @@
+{% extends "student-base.html" %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+    <section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-user-md"></i>Student Profile</h3>
+            <ol class="breadcrumb">
+              
+              
+            </ol>
+          </div>
+        </div>
+        <div class="row">
+<section>
+  {% if user.member.id_number %}
+  <div id="profile" class="tab-pane">
+    <section class="panel">
+      <div class="panel-body bio-graph-info">
+        <h1>Student Details</h1>
+        <div class="row">
+          <div class="bio-row">
+            <p><span>First Name </span>: {{user.first_name}} </p>
+          </div>
+          <div class="bio-row">
+            <p><span>Last Name </span>: {{user.last_name}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>ID Number </span>: {{user.member.id_number}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Phone </span>: {{user.member.phone_number}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Email</span>: {{user.member.email}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Gender </span>: {{user.member.gender}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Year </span>: {{user.member.year}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Postal Code </span>:{{user.member.postal_code}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Town </span>: {{user.member.town}}</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Country </span>: {{user.member.country}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  {% endif %}
+</section>
+
+  </section>
+</section>
+{% endif %}
+{% endblock content %}

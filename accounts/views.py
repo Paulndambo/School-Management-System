@@ -27,7 +27,7 @@ def register(request):
         else:
             messages.info(request, "Password Not Matching")
             return redirect('register')
-        return redirect("home")
+        return redirect("index")
     else:
         return render(request, 'registration/signup.html')
 

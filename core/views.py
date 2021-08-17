@@ -2,6 +2,9 @@ from django.shortcuts import render
 from . models import *
 from django.views.generic import ListView, UpdateView, CreateView, DetailView
 # Create your views here.
+def index(request):
+	return render(request, "home.html")
+
 def home(request):
 	subjects = Subject.objects.all().count()
 	teachers = Teacher.objects.all().count()
